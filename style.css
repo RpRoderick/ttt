@@ -27,8 +27,24 @@
   cursor: pointer;
 }
 
-.container {
+.containera {
   background: blue;
+  border-radius: 5px;
+  height: 100px;
+  width: auto;
+  text-align: center;
+}
+
+.containerb {
+  background: green;
+  border-radius: 5px;
+  height: 100px;
+  width: auto;
+  text-align: center;
+}
+
+.containerc {
+  background: grey;
   border-radius: 5px;
   height: 100px;
   width: auto;
@@ -57,4 +73,11 @@
   height: 100px;
   margin-top: 150px;
   width: auto;
+}
+
+.btn-primary {
+    width: 60px;
+    height: 40px;
+    background: cornflowerblue;
+    margin-left: 48%;
 }

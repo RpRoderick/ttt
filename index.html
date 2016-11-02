@@ -14,6 +14,10 @@
 <script>
 $(document).ready(function(){
   alert(Ryan is awesome!);
+}),
+$(".ttt").on('click', 'td', function () {
+    alert('clicked!');
+    if player ===
 });
 
 </script>
@@ -21,11 +25,11 @@ $(document).ready(function(){
 </head>
 
 <body>
-  <div class="container">
+  <div class="containera">
 
     <form id="sign-up">
         <fieldset>
-          <legend>Sign up!</legend>
+          <legend>Sign Up!</legend>
           <input type="text" name="credentials[email]" placeholder="email address">
           <input type="password" name="credentials[password]" placeholder="password">
           <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
@@ -33,7 +37,28 @@ $(document).ready(function(){
         </fieldset>
       </form>
     </div>
-
+    <div class="containerb">
+    <form id="sign-in">
+        <fieldset>
+          <legend>Sign In!</legend>
+          <input type="text" name="credentials[email]" placeholder="email address">
+          <input type="password" name="credentials[password]" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+          <input type="submit" name="submit" value="Sign In!">
+        </fieldset>
+      </form>
+    </div>
+    <div class="containerc">
+    <form id="change-password">
+        <fieldset>
+          <legend>Sign up!</legend>
+          <input type="text" name="credentials[email]" placeholder="email address">
+          <input type="password" name="credentials[password]" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+          <input type="submit" name="submit" value="Change Password!">
+        </fieldset>
+      </form>
+    </div>
     <div class="subcont"><br>
     <h1>Let's play TIC-TAC-TOE!</h1>
 
@@ -48,21 +73,24 @@ $(document).ready(function(){
 
 <table class="ttt">
   <tr class="rowOne">
-    <td class="cell1">1</td>
-    <td class="cell2">2</td>
-    <td class="cell3">3</td>
+    <td class="aa">aa</td>
+    <td class="ab">ab</td>
+    <td class="ac">ac</td>
   </tr>
   <tr class="rowTwo">
-    <td class="cell4">4</td>
-    <td class="cell5">5</td>
-    <td class="cell6">6</td>
+    <td class="ba">ba</td>
+    <td class="bb">bb</td>
+    <td class="bc">bc</td>
   </tr>
   <tr class="rowThree">
-    <td class="cell7">7</td>
-    <td class="cell8">8</td>
-    <td class="cell9">9</td>
+    <td class="ca">ca</td>
+    <td class="cb">cb</td>
+    <td class="cc">cc</td>
   </tr>
 </table>
+<br>
+<button type="button" class="btn btn-primary">Reset</button>
+
 <div class="footer">
 <h1>Created by: Ryan Roderick @ GA</h1>
 </div>

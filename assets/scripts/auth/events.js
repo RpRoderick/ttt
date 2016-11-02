@@ -5,6 +5,17 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
+$('td').one('click', function () {
+   if (player === 'player1') {
+     $(this).append('X');
+   }
+     if (player === 'player2') {
+      $(this).append('O');
+     }
+     else {
+       $(this).append('player not assigned');
+     }
+});
 
 const onSignUp = function (event) {
   let data = getFormFields(this);

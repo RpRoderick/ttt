@@ -5,11 +5,6 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-const onClick = function (event) {
-
-
-
-};
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
@@ -52,4 +47,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+
 };

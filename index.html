@@ -13,13 +13,13 @@
 
 <script>
 $(document).ready(function(){
-  $('.ttt').click(function () {
+  $('td').one('click', function () {
    //if player === '1'
-    $('.aa').html('X')
+    $(this).append('X')
     //else {
       //$('.aa').html('O')
     //}
-  });
+})
 });
 
 </script>
@@ -62,7 +62,7 @@ $(document).ready(function(){
       </form>
     </div>
     <div class="subcont"><br>
-    <h1>Let's play TIC-TAC-TOE!</h1>
+    <h1>Let\s play TIC-TAC-TOE!</h1>
 
   </div>
     <div class="subcontb">
@@ -76,18 +76,18 @@ $(document).ready(function(){
 <table class="ttt">
   <tr class="rowOne">
     <td class="aa"></td>
-    <td class="ab">ab</td>
-    <td class="ac">ac</td>
+    <td class="ab"></td>
+    <td class="ac"></td>
   </tr>
   <tr class="rowTwo">
-    <td class="ba">ba</td>
-    <td class="bb">bb</td>
-    <td class="bc">bc</td>
+    <td class="ba"></td>
+    <td class="bb"></td>
+    <td class="bc"></td>
   </tr>
   <tr class="rowThree">
-    <td class="ca">ca</td>
-    <td class="cb">cb</td>
-    <td class="cc">cc</td>
+    <td class="ca"></td>
+    <td class="cb"></td>
+    <td class="cc"></td>
   </tr>
 </table>
 <br>

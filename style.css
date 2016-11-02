@@ -9,7 +9,7 @@
 .ttt {
   padding: 0;
   margin: 0 auto;
-  margin-top: 220px;
+  margin-top: 30px;
 }
 
 .ttt tr td {
@@ -38,8 +38,9 @@
 .subcont {
   background: lightblue;
   border-radius: 5px;
-  height: 80px;
+  height: 100px;
   text-align: center;
+  margin-top: 10px;
 }
 
 .subcontb {

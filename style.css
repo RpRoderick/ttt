@@ -1,9 +1,15 @@
+.p {
+  text-align: center;
+}
 
+.h1 {
+  text-align: center;
+}
 
 .ttt {
   padding: 0;
   margin: 0 auto;
-  margin-top: 250px;
+  margin-top: 220px;
 }
 
 .ttt tr td {
@@ -19,4 +25,35 @@
 .ttt tr td:hover {
   background: tomato;
   cursor: pointer;
+}
+
+.container {
+  background: blue;
+  border-radius: 5px;
+  height: 100px;
+  width: auto;
+  text-align: center;
+}
+
+.subcont {
+  background: lightblue;
+  border-radius: 5px;
+  height: 80px;
+  text-align: center;
+}
+
+.subcontb {
+  background: orange;
+  border-radius: 5px;
+  height: 80px;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  background: red;
+  border-radius: 5px;
+  height: 100px;
+  margin-top: 150px;
+  width: auto;
 }

@@ -8,17 +8,20 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
-<script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-<script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+
 
 <script>
 $(document).ready(function(){
   $('td').one('click', function () {
-   //if player === '1'
-    $(this).append('X')
-    //else {
-      //$('.aa').html('O')
-    //}
+   if (player === 'player1') {
+    $(this).append('X');
+  }
+    else if (player === 'player2') {
+      $(this).append('O');
+    }
+    else {
+      $(this).append('player not assigned');
+    };
 })
 });
 
@@ -67,7 +70,7 @@ $(document).ready(function(){
   </div>
     <div class="subcontb">
       <p><br>
-    People bet their life savings!  Their children!  Fingers! This is
+    People bet their life savings!  Their children'\s college funds!  Fingers! This is
       Tic-Tac-Toe bitches!
     </p>
 

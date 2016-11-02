@@ -13,11 +13,13 @@
 
 <script>
 $(document).ready(function(){
-  alert(Ryan is awesome!);
-}),
-$(".ttt").on('click', 'td', function () {
-    alert('clicked!');
-    if player ===
+  $('.ttt').click(function () {
+   //if player === '1'
+    $('.aa').html('X')
+    //else {
+      //$('.aa').html('O')
+    //}
+  });
 });
 
 </script>
@@ -51,7 +53,7 @@ $(".ttt").on('click', 'td', function () {
     <div class="containerc">
     <form id="change-password">
         <fieldset>
-          <legend>Sign up!</legend>
+          <legend>Change Password!</legend>
           <input type="text" name="credentials[email]" placeholder="email address">
           <input type="password" name="credentials[password]" placeholder="password">
           <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
@@ -73,7 +75,7 @@ $(".ttt").on('click', 'td', function () {
 
 <table class="ttt">
   <tr class="rowOne">
-    <td class="aa">aa</td>
+    <td class="aa"></td>
     <td class="ab">ab</td>
     <td class="ac">ac</td>
   </tr>

@@ -5,23 +5,12 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-const player1 = function () {
-
-
-};
-
-
-const player2 = function () {
-
-
-};
-
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.signUp(data)
-    .then(ui.success)
+    .then(ui.signInSuccess)
     .catch(ui.failure);
 };
 

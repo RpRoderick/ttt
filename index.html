@@ -1,104 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title> Tic Tac Toe </title>
+    <head>
+      <title> Tic Tac Toe </title>
 
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link type="text/css" rel="stylesheet" href="style.css" />
+      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="containera">
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+        <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up!</legend>
+              <input type="text" name="credentials[email]" placeholder="email address">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+              <input type="submit" name="submit" value="Sign Up!">
+            </fieldset>
+          </form>
+        </div>
+        <div class="containerb">
+        <form id="sign-in">
+            <fieldset>
+              <legend>Sign In!</legend>
+              <input type="text" name="credentials[email]" placeholder="email address">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+              <input type="submit" name="submit" value="Sign In!">
+            </fieldset>
+          </form>
+        </div>
+        <div class="containerc">
+        <form id="change-password">
+            <fieldset>
+              <legend>Change Password!</legend>
+              <input type="text" name="credentials[email]" placeholder="email address">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+              <input type="submit" name="submit" value="Change Password!">
+            </fieldset>
+          </form>
+        </div>
+        <div class="subcont"><br>
+        <h1>Let\s play TIC-TAC-TOE!</h1>
 
+      </div>
+        <div class="subcontb">
+          <p><br>
+        People bet their life savings!  Their children'\s college funds!  Fingers! This is
+          Tic-Tac-Toe bitches!
+        </p>
 
+        </div>
 
-<script>
-$(document).ready(function(){
-  $('td').one('click', function () {
-   if (player === 'player1') {
-    $(this).append('X');
-  }
-    else if (player === 'player2') {
-      $(this).append('O');
-    }
-    else {
-      $(this).append('player not assigned');
-    };
-})
-});
+    <table class="ttt">
+      <tr class="rowOne">
+        <td class="aa"></td>
+        <td class="ab"></td>
+        <td class="ac"></td>
+      </tr>
+      <tr class="rowTwo">
+        <td class="ba"></td>
+        <td class="bb"></td>
+        <td class="bc"></td>
+      </tr>
+      <tr class="rowThree">
+        <td class="ca"></td>
+        <td class="cb"></td>
+        <td class="cc"></td>
+      </tr>
+    </table>
+    <br>
+    <button type="button" class="btn btn-primary">Reset</button>
 
-</script>
-
-</head>
-
-<body>
-  <div class="containera">
-
-    <form id="sign-up">
-        <fieldset>
-          <legend>Sign Up!</legend>
-          <input type="text" name="credentials[email]" placeholder="email address">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-          <input type="submit" name="submit" value="Sign Up!">
-        </fieldset>
-      </form>
+    <div class="footer">
+    <h1>Created by: Ryan Roderick @ GA</h1>
     </div>
-    <div class="containerb">
-    <form id="sign-in">
-        <fieldset>
-          <legend>Sign In!</legend>
-          <input type="text" name="credentials[email]" placeholder="email address">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-          <input type="submit" name="submit" value="Sign In!">
-        </fieldset>
-      </form>
-    </div>
-    <div class="containerc">
-    <form id="change-password">
-        <fieldset>
-          <legend>Change Password!</legend>
-          <input type="text" name="credentials[email]" placeholder="email address">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-          <input type="submit" name="submit" value="Change Password!">
-        </fieldset>
-      </form>
-    </div>
-    <div class="subcont"><br>
-    <h1>Let\s play TIC-TAC-TOE!</h1>
 
-  </div>
-    <div class="subcontb">
-      <p><br>
-    People bet their life savings!  Their children'\s college funds!  Fingers! This is
-      Tic-Tac-Toe bitches!
-    </p>
-
-    </div>
-
-<table class="ttt">
-  <tr class="rowOne">
-    <td class="aa"></td>
-    <td class="ab"></td>
-    <td class="ac"></td>
-  </tr>
-  <tr class="rowTwo">
-    <td class="ba"></td>
-    <td class="bb"></td>
-    <td class="bc"></td>
-  </tr>
-  <tr class="rowThree">
-    <td class="ca"></td>
-    <td class="cb"></td>
-    <td class="cc"></td>
-  </tr>
-</table>
-<br>
-<button type="button" class="btn btn-primary">Reset</button>
-
-<div class="footer">
-<h1>Created by: Ryan Roderick @ GA</h1>
-</div>
-
-</body>
+    </body>
 </html>

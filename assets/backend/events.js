@@ -23,7 +23,7 @@ const onUpdateGame = function (event) {
 
 const addBoardHandlers = () => {
   $('#reset').on('click', onCreateGame);
-  // $('td').on('click', onUpdateGame); //delete this after jquery works for gamelogic
+  $('td').on('click', onUpdateGame); //delete this after jquery works for gamelogic
 };
 
 module.exports = {

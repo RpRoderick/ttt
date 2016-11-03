@@ -5,10 +5,10 @@ by: Ryan Roderick
 
 
 
-1: User needs to be able to log in and be assigned to player 1
+<!-- 1: User needs to be able to log in and be assigned to player 1
 ***Javascript
-How do I assign player 1 = a? player 2=b?
-How do I toggle between players a + b on click?
+How do I assign player 1 = a? player 2=b?  WORKS!
+How do I toggle between players a + b on click? WORKS! -->
 
 
 
@@ -20,6 +20,8 @@ WORKS!
 
 AAHHHHHHHH! can't work it out, will come back later -->
 
+<!-- Works! -->
+
 
 4:  User needs to be able to be declared winner or loser at the end of nine clicks or
 on 3 in a row
@@ -29,7 +31,7 @@ How do I use tc class=aa, ab, ac to determine an array and match up x and o posi
 5:  game baord needs to be able to reset and start fresh (button)
 ****javascript
 Game board needs to reset after nine SUCCESSFUL clicks (better way to say it is to
-have 9 full td cells)
+have 9 full td cells) or WIN,
 
 OR
 just reset when button is pushed, regardless of board fill
@@ -44,3 +46,4 @@ c:Update a game by storing new moves. (UPDATE)
 
 
 7: colors scss
+8: readme

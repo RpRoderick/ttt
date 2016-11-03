@@ -30,6 +30,7 @@ const world = require('../global.js');
 
 const onTileClick = function () {
   let tile = $(this).attr('class');
+  // let tileID = '.td' + tile;
   let i = +(tile.replace(/\D/g, ''));
    if (world.ttt.player === 'x') {
      $('.'+tile).append('X');
@@ -37,7 +38,34 @@ const onTileClick = function () {
   } else if (world.ttt.player === 'o') {
      $('.'+tile).append('O');
      world.ttt.player = 'x';
-   }
+  }
+    let board = (world.ttt.baord);
+
+    if (board[0] === board[1] === board[2]){  //if these 3 values match=win.
+      return true;   //if win, go to end game function
+      //if they don't match, continue playing
+    }
+    if (board[3] === board[4] === board[5]){
+      return true;
+    }
+    if (board[6] === board[7] === board[8]){
+      return true;
+    }
+    if (board[0] === board[3] === board[6]){
+      return true;
+    }
+    if (board[1] === board[4] === board[7]){
+      return true;
+    }
+    if (board[2] === board[5] === board[8]){
+      return true;
+    }
+    if (board[0] === board[4] === board[8]){
+      return true;
+    }
+    if (board[2] === board[4] === board[6]){
+      return true;
+    }
 };
 
 
@@ -88,6 +116,7 @@ const addHandlers = () => {
   $('.ca6').one('click', onTileClick);
   $('.cb7').one('click', onTileClick);
   $('.cc8').one('click', onTileClick);
+  $('td').on('click', onUpdateGame);
 };
 
 module.exports = {

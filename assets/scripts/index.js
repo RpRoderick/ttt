@@ -11,18 +11,3 @@ $(() => {
   authEvents.addHandlers();
   backEndEvents.addBoardHandlers();
 });
-
-
-// $(document).ready(function(){
-//   $('td').one('click', function () {
-//    if (player === 'player1') {
-//     $(this).append('X');
-//   }
-//     else if (player === 'player2') {
-//       $(this).append('O');
-//     }
-//     else {
-//       $(this).append('player not assigned');
-//     }
-//   });
-// });

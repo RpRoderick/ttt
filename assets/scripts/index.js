@@ -5,9 +5,11 @@
 
 // use require without a reference to ensure a file is bundled
 const authEvents = require('./auth/events');
+const backEndEvents = require('../backend/events');
 
 $(() => {
   authEvents.addHandlers();
+  backEndEvents.addBoardHandlers();
 });
 
 

@@ -41,3 +41,6 @@ a:Visually display the results of retrieving game statistics, such as total game
 b:Create new games on the server. (CREATE)
 
 c:Update a game by storing new moves. (UPDATE)
+
+
+7: colors scss

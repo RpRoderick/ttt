@@ -5,28 +5,6 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 
-// const toggle = function (a, b) {
-//     let togg = false;
-//     return function () {
-//         return (togg = !togg) ? a() : b();
-//     };
-// };
-
-//CAN I JUST USE .SWITCH UNDER APPEND INSTEAD OF TOGGLING?
-
-$('td').one('click', /*toggle*/ (function () {
-//if (player === a)
-     $(this).append('X');
-     //else if (player === b) {
-      //$(this).append('O');
-    }));
-  //   else {
-    //   $(this).append('player not assigned');
-     //}
-     //
-//});
-
-
 const onSignUp = function (event) {
   let data = getFormFields(this);
   event.preventDefault();

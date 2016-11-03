@@ -27,7 +27,6 @@
               <legend>Sign In!</legend>
               <input type="text" name="credentials[email]" placeholder="email address">
               <input type="password" name="credentials[password]" placeholder="password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
               <input type="submit" name="submit" value="Sign In!">
             </fieldset>
           </form>
@@ -36,10 +35,27 @@
         <form id="change-password">
             <fieldset>
               <legend>Change Password!</legend>
-              <input type="text" name="credentials[email]" placeholder="email address">
-              <input type="password" name="credentials[password]" placeholder="password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+              <input type="password" name="passwords[old]" placeholder="Old Password">
+              <input type="password" name="passwords[new]" placeholder="New Password">
               <input type="submit" name="submit" value="Change Password!">
+            </fieldset>
+          </form>
+        </div>
+        <div class="containerd">
+        <form id="sign-out">
+            <fieldset>
+              <legend>Sign Out!</legend>
+              <input type="text" name="credentials[email]" placeholder="email address">
+              <input type="submit" name="submit" value="Sign Out!">
+            </fieldset>
+          </form>
+        </div>
+        <div class="containere">
+        <form id="User Data">
+            <fieldset>
+              <legend>Stats!</legend>
+              <input type="text" name="credentials[email]" placeholder="email address">
+              <input type="submit" name="submit" value="Sign Out!">
             </fieldset>
           </form>
         </div>

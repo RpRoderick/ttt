@@ -87,7 +87,6 @@ const onTileClick = function () {
   }
       winCheck();
     if (world.ttt.gameOver) {
-      debugger;
       $('table').css('pointer-events', 'none');  //use this for turning click back on
       //for reset game
  console.log('you win');

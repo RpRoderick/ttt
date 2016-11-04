@@ -23,10 +23,14 @@ AAHHHHHHHH! can't work it out, will come back later -->
 <!-- Works! -->
 
 
-4:  User needs to be able to be declared winner or loser at the end of nine clicks or
+<!-- 4:  User needs to be able to be declared winner or loser at the end of nine clicks or
 on 3 in a row
 ****Javascript
 How do I use tc class=aa, ab, ac to determine an array and match up x and o positions to declare winner?
+
+WORKS!! -->
+
+
 
 5:  game baord needs to be able to reset and start fresh (button)
 ****javascript
@@ -47,3 +51,4 @@ c:Update a game by storing new moves. (UPDATE)
 
 7: colors scss
 8: readme
+9: .win-

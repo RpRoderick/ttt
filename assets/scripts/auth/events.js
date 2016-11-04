@@ -27,10 +27,9 @@ const world = require('../global.js');
 // };
 
 //CAN I JUST USE .SWITCH UNDER APPEND INSTEAD OF TOGGLING?
-const winCheck = function () {
-
+const winCheck = function() {
   let board = (world.ttt.board);
-
+  let gameOver = (world.ttt.gameOver);
   if (board[0] && (board[0] === board[1]) && (board[1] === board[2])) {
     console.log('win');  //if these 3 values match=win.
     $('.win-message').text(board[0] + ' wins!');
@@ -72,9 +71,7 @@ const winCheck = function () {
     $('.win-message').text(board[0] + ' wins!');
     gameOver = true;
   }
-
 };
-
 
 const onTileClick = function () {
   let tile = $(this).attr('class');
@@ -88,20 +85,14 @@ const onTileClick = function () {
      world.ttt.player = 'x'; //swicthing player
      world.ttt.board[i] = 'o';
   }
-    if (winCheck()) {
+      winCheck();
+    if (world.ttt.gameOver) {
+      debugger;
+      $('table').css('pointer-events', 'none');  //use this for turning click back on
+      //for reset game
  console.log('you win');
     }
-
-
-    console.log(world.ttt.board);
 };
-
-
-// const endGame = function () {
-//
-// };
-//   //if win or board full, stop click function, declare winner
-
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
@@ -134,12 +125,24 @@ const onSignOut = function (event) {
     .catch(ui.failure);
 };
 
+const onResetGame = function (event) {
+  event.preventDefault();
+  //if winGame kicks in, it will shut down button click on table, need to
+  //kick in reset of board (clear td of value)
+  //$('reset').css('pointer-events', 'auto');
+  // let tile = $(this).attr('class');
+  //
+  // $('.'+tile).append('');
+
+};
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
+  $('#reset').on('submit', onResetGame);
+
   $('.aa0').one('click', onTileClick);
   $('.ab1').one('click', onTileClick);
   $('.ac2').one('click', onTileClick);
@@ -149,6 +152,8 @@ const addHandlers = () => {
   $('.ca6').one('click', onTileClick);
   $('.cb7').one('click', onTileClick);
   $('.cc8').one('click', onTileClick);
+  // $('reset').css('pointer-events', 'auto');  //use this for turning click back on
+
 };
 
 module.exports = {

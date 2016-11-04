@@ -13,7 +13,8 @@
 // };
 const ttt = {
   player: 'x',
-  board: []
+  board: [],
+  gameOver: false,
 };
  module.exports = {
    ttt,

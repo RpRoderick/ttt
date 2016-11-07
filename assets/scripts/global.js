@@ -12,7 +12,7 @@
 //
 // };
 const ttt = {
-  player: 'x',
+  player: 'X',
   board: [],
   gameOver: false,
 };

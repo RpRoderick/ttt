@@ -29,7 +29,6 @@ const world = require('../global.js');
 //CAN I JUST USE .SWITCH UNDER APPEND INSTEAD OF TOGGLING?
 const winCheck = function() {
   let board = (world.ttt.board);
-  // let gameOver = (world.ttt.gameOver);
   if (board[0] && (board[0] === board[1]) && (board[1] === board[2])) {
     console.log('win');  //if these 3 values match=win.
     $('.win').text(board[0] + ' Wins!');
@@ -39,12 +38,12 @@ const winCheck = function() {
   }
   if (board[3] && (board[3] === board[4]) && (board[4] === board[5])){
     console.log('win');
-    $('.win').text(board[0] + ' Wins!');
+    $('.win').text(board[3] + ' Wins!');
    world.ttt.gameOver = true;
   }
   if (board[6] && (board[6] === board[7]) && (board[7] === board[8])){
     console.log('win');
-    $('.win').text(board[0] + ' Wins!');
+    $('.win').text(board[7] + ' Wins!');
    world.ttt.gameOver = true;
   }
   if (board[0] && (board[0] === board[3]) && (board[3] === board[6])){
@@ -54,12 +53,12 @@ const winCheck = function() {
   }
   if (board[1] && (board[1] === board[4]) && (board[4] === board[7])){
     console.log('win');
-    $('.win').text(board[0] + ' Wins!');
+    $('.win').text(board[1] + ' Wins!');
    world.ttt.gameOver = true;
   }
   if (board[2] && (board[2] === board[5]) && (board[5] === board[8])){
     console.log('win');
-    $('.win').text(board[0] + ' Wins!');
+    $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
   }
   if (board[0] && (board[0] === board[4]) && (board[4] === board[8])){
@@ -69,7 +68,7 @@ const winCheck = function() {
   }
   if (board[2] && (board[2] === board[4]) && (board[4] === board[6])){
     console.log('win');
-    $('.win').text(board[0] + ' Wins!');
+    $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
   }
 };
@@ -90,10 +89,13 @@ const onTileClick = function () {
      world.ttt.board[i] = 'O';
    }  winCheck();
     if (world.ttt.gameOver) {
-      $('td').off();  //use this for turning click back on
-      //for reset game
+      $('td').off();
  console.log('you win');
     }
+};
+
+const onResetBoard = function () {
+  $('td').append('');
 };
 
 const onSignUp = function (event) {
@@ -126,25 +128,21 @@ const onSignOut = function (event) {
     .then(ui.success)
     .catch(ui.failure);
 };
-
-const onResetGame = function (event) {
-  event.preventDefault();
-  //if winGame kicks in, it will shut down button click on table, need to
-  //kick in reset of board (clear td of value)
-  //$('reset').css('pointer-events', 'auto');
-  // let tile = $(this).attr('class');
-  //
-  // $('.'+tile).append('');
-
-};
+//
+// const onResetGame = function (event) {  //goes to click handler
+//   event.preventDefault();
+//   api.resetApi()
+//   .then(ui.success)
+//   .catch(ui.failure);
+// };
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
-  $('#reset').on('submit', onResetGame);
-  $('#winCheck').one('click', onTileClick);
+  // $('#resetApi').on('click', onResetGame);
+  $('#reset').on('click', onResetBoard);
   $('.aa0').one('click', onTileClick);
   $('.ab1').one('click', onTileClick);
   $('.ac2').one('click', onTileClick);
@@ -154,7 +152,6 @@ const addHandlers = () => {
   $('.ca6').one('click', onTileClick);
   $('.cb7').one('click', onTileClick);
   $('.cc8').one('click', onTileClick);
-  // $('reset').css('pointer-events', 'auto');  //use this for turning click back on
 
 };
 

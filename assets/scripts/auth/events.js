@@ -6,35 +6,13 @@ const api = require('./api');
 const ui = require('./ui');
 const world = require('../global.js');
 
-//this is what I was doing at first, it wasn't working, so I started my javascript over
-//$('td').one('click', /*toggle*/ (function () {
-  //if (player_x)
-  //   $(this).append('X');
-    //  if (player_o) {
-      //$(this).append('O');
-    //})
-    //else {
-      // $(this).append('player not assigned');
-     //}
-     //onUpdateGame(); //(this goes under click event to Update the game in API)
-//});
-//);
-// const toggle = function (a, b) {
-//     let togg = false;
-//     return function () {
-//         return (togg = !togg) ? a() : b();
-//     };
-// };
 
-//CAN I JUST USE .SWITCH UNDER APPEND INSTEAD OF TOGGLING?
 const winCheck = function() {
   let board = (world.ttt.board);
   if (board[0] && (board[0] === board[1]) && (board[1] === board[2])) {
-    console.log('win');  //if these 3 values match=win.
+    console.log('win');
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
-     //if win, go to end game function
-    //if they don't match, continue playing
   }
   if (board[3] && (board[3] === board[4]) && (board[4] === board[5])){
     console.log('win');
@@ -71,6 +49,11 @@ const winCheck = function() {
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
   }
+//   else {
+//     console.log('Tie');
+//     $('.win').text('TIE!');
+//   //  world.ttt.gameOver = true;
+// }
 };
 
 const onTileClick = function () {
@@ -78,25 +61,30 @@ const onTileClick = function () {
     return;
   }
   let tile = $(this).attr('class');
-  let i = +(tile.replace(/\D/g, ''));
+  let i = +(tile.replace(/\D/g, '')); //chrome doesn't like this line, not sure why
    if (world.ttt.player === 'X') {
      $('.'+tile).append('X');
+     $('.'+tile).css('pointer-events', 'none');
      world.ttt.player = 'O';
      world.ttt.board[i] = 'X';
   } else if (world.ttt.player === 'O') {
      $('.'+tile).append('O');
-     world.ttt.player = 'X'; //swicthing player
+     $('.'+tile).css('pointer-events', 'none');
+     world.ttt.player = 'X';
      world.ttt.board[i] = 'O';
-   }  winCheck();
-    if (world.ttt.gameOver) {
-      $('td').off();
- console.log('you win');
-    }
-};
+   }
+   winCheck();
+  };
 
-const onResetBoard = function () {
-  $('td').append('');
-};
+  const onResetBoard = function () {
+    world.ttt.gameOver = false;
+    world.ttt.board = [];
+    world.ttt.player = 'X';
+    $('td').css('pointer-events', 'auto');
+    $('td').html('');
+    $('.win').html('');
+    onTileClick();
+    };
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
@@ -128,34 +116,25 @@ const onSignOut = function (event) {
     .then(ui.success)
     .catch(ui.failure);
 };
-//
-// const onResetGame = function (event) {  //goes to click handler
-//   event.preventDefault();
-//   api.resetApi()
-//   .then(ui.success)
-//   .catch(ui.failure);
-// };
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
-  // $('#resetApi').on('click', onResetGame);
   $('#reset').on('click', onResetBoard);
-  $('.aa0').one('click', onTileClick);
-  $('.ab1').one('click', onTileClick);
-  $('.ac2').one('click', onTileClick);
-  $('.ba3').one('click', onTileClick);
-  $('.bb4').one('click', onTileClick);
-  $('.bc5').one('click', onTileClick);
-  $('.ca6').one('click', onTileClick);
-  $('.cb7').one('click', onTileClick);
-  $('.cc8').one('click', onTileClick);
+  $('.aa0').on('click', onTileClick);
+  $('.ab1').on('click', onTileClick);
+  $('.ac2').on('click', onTileClick);
+  $('.ba3').on('click', onTileClick);
+  $('.bb4').on('click', onTileClick);
+  $('.bc5').on('click', onTileClick);
+  $('.ca6').on('click', onTileClick);
+  $('.cb7').on('click', onTileClick);
+  $('.cc8').on('click', onTileClick);
 
 };
 
 module.exports = {
   addHandlers,
-
 };

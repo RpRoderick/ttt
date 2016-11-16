@@ -50,20 +50,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .subcont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 2px 2px 5px blue;
   background: lightblue;
   border-radius: 5px;
   font-size: 25px;
   height: 100px;
-  margin-top: 0;
-  text-align: center;
 }
 
 .subcontb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: orange;
   border-radius: 5px;
   font-size: 15px;
   height: 80px;
-  text-align: center;
 }
 
 table {
@@ -90,8 +96,10 @@ td:hover {
   background: red;
   border-radius: 5px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100px;
-  margin-top: 150px;
+  margin-top: 20px;
   width: auto;
 }
 
@@ -111,28 +119,89 @@ td:hover {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  text-shadow: 2px 2px 5px blue;
   text-align: center;
   width: 20%;
 }
 
-.player-1 {
-  background: white;
-  font-size: 30px;
+.player {
   height: 100px;
-  margin-left: auto;
-  margin-right: 75%;
-  margin-top: 30px;
-  text-align: center;
-  width: 20%;
+  margin: 0 auto;
+  background-color: #dedede;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.player-2 {
-  background: white;
-  font-size: 30px;
+.player1 {
+  width: 33%;
   height: 100px;
-  margin-left: 75%;
+  margin: 0 auto;
+  background-color: #dedede;
+  text-shadow: 2px 2px 5px red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player2 {
+  width: 33%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: lightgreen;
+  text-shadow: 2px 2px 5px orange;
+  display: flex;
+  // flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.playernone {
+  width: 33%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-fade {
+  opacity: 0;
+  &.in {opacity: .7;};
+};
+
+.btn-default {
   margin-right: auto;
-  margin-top: 30px;
-  text-align: center;
-  width: 20%;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .player1 { display: none; }
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .player2 { display: none; }
+}
+
+@media (max-width: 700px) {
+  .btn-primary {
+    background: cornflowerblue;
+    height: 40px;
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    background: red;
+    border-radius: 5px;
+    display: flex;
+    height: 100px;
+    margin-top: 0;
+    width: auto;
+  }
 }

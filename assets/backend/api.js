@@ -16,7 +16,7 @@ const store = require('../scripts/store.js');
   };
 
   const updateGame = function () {
-    $.ajax({
+    return $.ajax({
       url: store.host + '/user-data' + store.user.id,
       method: 'PATCH',
       headers: {

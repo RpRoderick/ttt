@@ -49,11 +49,6 @@ const winCheck = function() {
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
   }
-//   else {
-//     console.log('Tie');
-//     $('.win').text('TIE!');
-//   //  world.ttt.gameOver = true;
-// }
 };
 
 const onTileClick = function () {
@@ -67,13 +62,18 @@ const onTileClick = function () {
      $('.'+tile).css('pointer-events', 'none');
      world.ttt.player = 'O';
      world.ttt.board[i] = 'X';
+     world.ttt.turnCount++;
   } else if (world.ttt.player === 'O') {
      $('.'+tile).append('O');
      $('.'+tile).css('pointer-events', 'none');
      world.ttt.player = 'X';
      world.ttt.board[i] = 'O';
+     world.ttt.turnCount++;
    }
    winCheck();
+   if (world.ttt.turnCount === 9 && !winCheck()) {
+   $('.win').text('TIE!');
+ }
   };
 
   const onResetBoard = function () {

@@ -5,6 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const world = require('../global.js');
+// const events = require('../../backend/events.js');  //this one
 
 
 const winCheck = function() {
@@ -57,7 +58,9 @@ const onTileClick = function () {
   }
   let tile = $(this).attr('class');
   let i = +(tile.replace(/\D/g, '')); //chrome doesn't like this line, not sure why
-   if (world.ttt.player === 'X') {
+    world.ttt.index = i;
+    console.log('index: ' + i);
+    if (world.ttt.player === 'X') {
      $('.'+tile).append('X');
      $('.'+tile).css('pointer-events', 'none');
      world.ttt.player = 'O';
@@ -70,6 +73,7 @@ const onTileClick = function () {
      world.ttt.board[i] = 'O';
      world.ttt.turnCount++;
    }
+  //  events.onUpdateGame();
    winCheck();
    if (world.ttt.turnCount === 9 && !winCheck()) {
    $('.win').text('TIE!');
@@ -83,7 +87,6 @@ const onTileClick = function () {
     $('td').css('pointer-events', 'auto');
     $('td').html('');
     $('.win').html('');
-    onTileClick();
     };
 
 const onSignUp = function (event) {

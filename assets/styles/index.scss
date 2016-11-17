@@ -178,11 +178,15 @@ td:hover {
 }
 
 @media screen and (min-width: 0px) and (max-width: 700px) {
-  .player1 { display: none; }
+  .player1 {
+    font-size: 15px;
+  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 700px) {
-  .player2 { display: none; }
+  .player2 {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -203,5 +207,13 @@ td:hover {
     height: 100px;
     margin-top: 0;
     width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .subcont {
+    background: orange;
+    border-radius: 5px;
+    font-size: 15px;
   }
 }

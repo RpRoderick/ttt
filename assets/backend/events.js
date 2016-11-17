@@ -4,7 +4,7 @@
 
 const api = require('./api');
 const ui = require('./ui');
-// require('../auth/events.js');
+const world = require('../scripts/global.js');
 
 const onCreateGame = function (event) {
   event.preventDefault();
@@ -13,20 +13,29 @@ const onCreateGame = function (event) {
     .catch(ui.failure);
 };
 
-const onUpdateGame = function (event) {
-  event.preventDefault();
-  api.updateGame()
-    .then(ui.success) //fails here
+const onUpdateGame = function () {
+  let data = {
+    "game": {
+      "cell": {
+        "index": world.ttt.index,
+        "value": world.ttt.player,
+      },
+      "over": world.ttt.gameOver,
+    },
+  };
+
+  api.updateGame(data)
+    .then(ui.success)
     .catch(ui.failure);
 };
 
 const addBoardHandlers = () => {
+  $('#board').css('pointer-events', 'none');
   $('#reset').on('click', onCreateGame);
   $('td').on('click', onUpdateGame);
 };
 
+
 module.exports = {
   addBoardHandlers,
-
-
 };

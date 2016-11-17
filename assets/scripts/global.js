@@ -5,6 +5,7 @@ const ttt = {
   player: 'X',
   board: [],
   gameOver: false,
+  index: 0,
 };
  module.exports = {
    ttt,

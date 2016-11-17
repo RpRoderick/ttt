@@ -15,10 +15,11 @@ const store = require('../scripts/store.js');
     });
   };
 
-  const updateGame = function () {
+  const updateGame = function (data) {
     return $.ajax({
-      url: store.host + '/user-data' + store.user.id,
+      url: store.host + '/games/' + store.game.id,   //RIGHT HERE!
       method: 'PATCH',
+      data,
       headers: {
         Authorization: 'Token token=' + store.user.token,
       },

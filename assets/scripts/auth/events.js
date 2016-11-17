@@ -14,41 +14,56 @@ const winCheck = function() {
     console.log('win');
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[3] && (board[3] === board[4]) && (board[4] === board[5])){
     console.log('win');
     $('.win').text(board[3] + ' Wins!');
    world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[6] && (board[6] === board[7]) && (board[7] === board[8])){
     console.log('win');
     $('.win').text(board[7] + ' Wins!');
    world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[0] && (board[0] === board[3]) && (board[3] === board[6])){
     console.log('win');
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[1] && (board[1] === board[4]) && (board[4] === board[7])){
     console.log('win');
     $('.win').text(board[1] + ' Wins!');
    world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[2] && (board[2] === board[5]) && (board[5] === board[8])){
     console.log('win');
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[0] && (board[0] === board[4]) && (board[4] === board[8])){
     console.log('win');
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[2] && (board[2] === board[4]) && (board[4] === board[6])){
     console.log('win');
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
+  return true;
   }
 };
 
@@ -73,9 +88,10 @@ const onTileClick = function () {
      world.ttt.board[i] = 'O';
      world.ttt.turnCount++;
    }
+
+   winCheck();
    if ((world.ttt.turnCount === 9) && (!winCheck())) {
      $('.win').text('TIE!');
-   winCheck();
  }
   };
 //
@@ -149,15 +165,16 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   // $('#stats').on('submit', onGetStats);
   $('#reset').on('click', onResetBoard);
-  $('.aa0').on('click', onTileClick);
-  $('.ab1').on('click', onTileClick);
-  $('.ac2').on('click', onTileClick);
-  $('.ba3').on('click', onTileClick);
-  $('.bb4').on('click', onTileClick);
-  $('.bc5').on('click', onTileClick);
-  $('.ca6').on('click', onTileClick);
-  $('.cb7').on('click', onTileClick);
-  $('.cc8').on('click', onTileClick);
+  // $('.aa0').on('click', onTileClick);
+  // $('.ab1').on('click', onTileClick);
+  // $('.ac2').on('click', onTileClick);
+  // $('.ba3').on('click', onTileClick);
+  // $('.bb4').on('click', onTileClick);
+  // $('.bc5').on('click', onTileClick);
+  // $('.ca6').on('click', onTileClick);
+  // $('.cb7').on('click', onTileClick);
+  // $('.cc8').on('click', onTileClick);
+$('td').on('click', onTileClick);
 
 };
 

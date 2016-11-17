@@ -18,11 +18,12 @@ const onUpdateGame = function () {
     "game": {
       "cell": {
         "index": world.ttt.index,
-        "value": world.ttt.player,
+        "value": world.ttt.player === "X"?"o":"x",
       },
       "over": world.ttt.gameOver,
     },
   };
+// world.ttt.player = ;
 
   api.updateGame(data)
     .then(ui.success)

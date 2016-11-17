@@ -73,21 +73,24 @@ const onTileClick = function () {
      world.ttt.board[i] = 'O';
      world.ttt.turnCount++;
    }
-  //  events.onUpdateGame();
+   if ((world.ttt.turnCount === 9) && (!winCheck())) {
+     $('.win').text('TIE!');
    winCheck();
-   if (world.ttt.turnCount === 9 && !winCheck()) {
-   $('.win').text('TIE!');
  }
   };
-
-  const onResetBoard = function () {
-    world.ttt.gameOver = false;
-    world.ttt.board = [];
-    world.ttt.player = 'X';
-    $('td').css('pointer-events', 'auto');
-    $('td').html('');
-    $('.win').html('');
-    };
+//
+//   const onResetBoard = function () {
+// //turn clicks off until sign in - how?
+//     $('#reset').off().on('submit', onSignIn());
+//     world.ttt.index = 0;
+//     world.ttt.turnCount = 0;
+//     world.ttt.gameOver = false;
+//     world.ttt.board = [];
+//     world.ttt.player = 'X';
+//     $('td').css('pointer-events', 'auto');
+//     $('td').html('');
+//     $('.win').html('');
+//     };
 
 const onSignUp = function (event) {
   let data = getFormFields(this);
@@ -120,11 +123,31 @@ const onSignOut = function (event) {
     .catch(ui.failure);
 };
 
+  const onResetBoard = function () {
+//turn clicks off until sign in - how?
+    world.ttt.index = 0;
+    world.ttt.turnCount = 0;
+    world.ttt.gameOver = false;
+    world.ttt.board = [];
+    world.ttt.player = 'X';
+    $('td').css('pointer-events', 'auto');
+    $('td').html('');
+    $('.win').html('');
+    };
+
+// const onGetStats = function (event) {
+//   event.preventDefault();
+//   api.signOut()
+//     .then(ui.success)
+//     .catch(ui.failure);
+// };
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
+  // $('#stats').on('submit', onGetStats);
   $('#reset').on('click', onResetBoard);
   $('.aa0').on('click', onTileClick);
   $('.ab1').on('click', onTileClick);

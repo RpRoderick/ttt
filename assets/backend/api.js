@@ -3,7 +3,6 @@
 // const config = require('../config.js');
 const store = require('../scripts/store.js');
 
-
   const createGame = function () {
     return $.ajax({
       url: store.host + '/games',
@@ -17,7 +16,7 @@ const store = require('../scripts/store.js');
 
   const updateGame = function (data) {
     return $.ajax({
-      url: store.host + '/games/' + store.game.id,   //RIGHT HERE!
+      url: store.host + '/games/' + store.game.id,
       method: 'PATCH',
       data,
       headers: {

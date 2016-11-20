@@ -9,7 +9,7 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-
+        <br>
        <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Users</a>
 
        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -62,14 +62,13 @@
                    </fieldset>
                  </form>
                </div>
-               <div class="containere">
-<button type="button" id='stats' class="btn btn-default" value="Get Games">Stats</button>
-<div class="statsbox"></div>
 
-               </div>
-             </div>
+</div>
              <div class="modal-footer">
-               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               <div class="statsbox">
+
+    <button type="button" id='stats' class="btn btn-stats" value="Get Games">Stats</button>
+    </div>
              </div>
            </div>
          </div>
@@ -85,7 +84,7 @@
         </div>
         <div class='player'>
           <div class='player1'>PLAYER 1 is X!</div><br>
-          <div class='stats-box'></div>
+          <div class='win'></div>
           <div class='player2'>PLAYER 2 is O!</div>
         </div>
     <table id="board">
@@ -108,7 +107,6 @@
     <br>
     <button type="button" class="btn btn-primary" id="reset">New Game</button>
     <br>
-    <div class='win'></div>
     <div class="footer">
     <h1>Created by: Ryan Roderick @ GA</h1>
     </div>

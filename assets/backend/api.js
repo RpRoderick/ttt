@@ -1,6 +1,5 @@
 'use strict';
 
-// const config = require('../config.js');
 const store = require('../scripts/store.js');
 
   const createGame = function () {
@@ -16,7 +15,7 @@ const store = require('../scripts/store.js');
 
   const updateGame = function (data) {
     return $.ajax({
-      url: store.host + '/games' + store.game.id,
+      url: store.host + '/games/' + store.game.id,
       method: 'PATCH',
       data,
       headers: {

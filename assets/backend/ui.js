@@ -11,15 +11,15 @@ const failure = (error) => {
 };
 
 const getGamesSuccess = (data) => {
-  store.game = data.game;
-  console.log(data);
-  console.log("get game");
-  $('.statsbox')
-  .text("You've played " + data.games.length + ' games');
-};
+    store.game = data.game;
+    console.log(data);
+    console.log("get game");
+    $('.statsbox')
+    .text("You've played " + data.games.length + ' games');
+ };
 
 module.exports = {
   failure,
   success,
-  getGamesSuccess
+  getGamesSuccess,
 };

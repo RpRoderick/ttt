@@ -10,7 +10,7 @@ const onCreateGame = function (event) {
   event.preventDefault();
   api.createGame()
     // .then(ui.success)
-    .then(ui.getGamesSuccess)
+    .then(ui.success)
     .catch(ui.failure);
 };
 
@@ -24,7 +24,6 @@ const onUpdateGame = function () {
       "over": world.ttt.gameOver,
     },
   };
-// world.ttt.player = ;
 
   api.updateGame(data)
     .then(ui.success)
@@ -43,7 +42,6 @@ const addBoardHandlers = () => {
   $('#reset').on('click', onCreateGame);
   $('td').on('click', onUpdateGame);
   $('#stats').on('click', onGetAllGames);
-  $('.statsbox').text()
 };
 
 

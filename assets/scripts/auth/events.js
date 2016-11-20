@@ -144,7 +144,6 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#reset').on('click', onResetBoard);
   $('td').on('click', onTileClick);
-
 };
 
 module.exports = {

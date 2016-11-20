@@ -10,7 +10,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .containera {
-  background: blue;
+  background: white;
   border-radius: 5px;
   height: 100px;
   text-align: center;
@@ -18,7 +18,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .containerb {
-  background: green;
+  background: white;
   border-radius: 5px;
   height: 100px;
   text-align: center;
@@ -26,7 +26,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .containerc {
-  background: grey;
+  background: white;
   border-radius: 5px;
   height: 100px;
   text-align: center;
@@ -34,7 +34,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .containerd {
-  background: yellow;
+  background: white;
   border-radius: 5px;
   height: 100px;
   text-align: center;
@@ -42,7 +42,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .containere {
-  background: brown;
+  background: white;
   border-radius: 5px;
   height: 100px;
   text-align: center;
@@ -54,8 +54,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   justify-content: center;
   align-items: center;
   text-align: center;
-  text-shadow: 2px 2px 5px blue;
-  background: lightblue;
+  text-shadow: 2px 2px 5px gray;
+  background: white;
   border-radius: 5px;
   font-size: 25px;
   height: 100px;
@@ -66,7 +66,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: orange;
+  background: white;
   border-radius: 5px;
   font-size: 15px;
   height: 80px;
@@ -93,7 +93,7 @@ td:hover {
 }
 
 .footer {
-  background: red;
+  background: white;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -101,15 +101,6 @@ td:hover {
   height: 100px;
   margin-top: 20px;
   width: auto;
-}
-
-.btn-primary {
-  background: cornflowerblue;
-  height: 40px;
-  margin-left: 45%;
-  margin-right: 45%;
-  width: 10%;
-
 }
 
 .win {
@@ -127,7 +118,7 @@ td:hover {
 .player {
   height: 100px;
   margin: 0 auto;
-  background-color: #dedede;
+  background-color: white;
   font-size: 40px;
   display: flex;
   justify-content: center;
@@ -138,8 +129,19 @@ td:hover {
   width: 33%;
   height: 100px;
   margin: 0 auto;
-  background-color: #dedede;
-  text-shadow: 2px 2px 5px red;
+  background-color: white;
+  text-shadow: 2px 2px 5px maroon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playernone {
+  width: 33%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: white;
+  text-shadow: 2px 2px 5px darkred;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,19 +151,19 @@ td:hover {
   width: 33%;
   height: 100px;
   margin: 0 auto;
-  background-color: lightgreen;
-  text-shadow: 2px 2px 5px orange;
+  background-color: white;
+  text-shadow: 2px 2px 5px darkblue;
   display: flex;
-  // flex-flow: row nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 }
 
 .statsbox {
   width: 33%;
-  height: 100px;
+  height: 30px;
   margin: 0 auto;
-  background-color: pink;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,6 +179,33 @@ td:hover {
   margin-left: auto;
 }
 
+.btn-primary {
+  background: black;
+  text-shadow: 2px 2px 5px white;
+  height: 40px;
+  margin-left: 45%;
+  margin-right: 45%;
+  width: 10%;
+}
+
+.btn-stats {
+  background: cornflowerblue;
+  height: 40px;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  width: 40%;
+
+}
+
+.modal-title {
+  width: 50%;
+  height: 30px;
+margin-left: 5%;
+
+}
+
+
 @media screen and (min-width: 0px) and (max-width: 700px) {
   .player1 {
     font-size: 15px;
@@ -191,7 +220,7 @@ td:hover {
 
 @media (max-width: 700px) {
   .btn-primary {
-    background: cornflowerblue;
+    background: black;
     height: 40px;
     margin-left: 35%;
     margin-right: 35%;
@@ -201,19 +230,33 @@ td:hover {
 
 @media (max-width: 400px) {
   .footer {
-    background: red;
+    background: white;
     border-radius: 5px;
     display: flex;
     height: 100px;
     margin-top: 0;
     width: auto;
+    align-content: center;
+    text-align: center;
   }
 }
 
 @media (max-width: 400px) {
   .subcont {
-    background: orange;
+    background: white;
     border-radius: 5px;
     font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .statsbox {
+    width: 55%;
+    height: 30px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

@@ -1,11 +1,10 @@
 'use strict';
 
 const getFormFields = require(`../../../lib/get-form-fields`);
-
 const api = require('./api');
 const ui = require('./ui');
 const world = require('../global.js');
-// const events = require('../../backend/events.js');  //this one
+
 
 
 const winCheck = function() {
@@ -94,22 +93,9 @@ const onTileClick = function () {
      $('.win').text('TIE!');
  }
   };
-//
-//   const onResetBoard = function () {
-// //turn clicks off until sign in - how?
-//     $('#reset').off().on('submit', onSignIn());
-//     world.ttt.index = 0;
-//     world.ttt.turnCount = 0;
-//     world.ttt.gameOver = false;
-//     world.ttt.board = [];
-//     world.ttt.player = 'X';
-//     $('td').css('pointer-events', 'auto');
-//     $('td').html('');
-//     $('.win').html('');
-//     };
 
 const onSignUp = function (event) {
-  let data = getFormFields(this);
+  let data = getFormFields(event.target);
   event.preventDefault();
   api.signUp(data)
     .then(ui.signInSuccess)
@@ -117,7 +103,7 @@ const onSignUp = function (event) {
 };
 
 const onSignIn = function (event) {
-  let data = getFormFields(this);
+  let data = getFormFields(event.target);
   event.preventDefault();
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -125,7 +111,7 @@ const onSignIn = function (event) {
 };
 
 const onChangePassword = function (event) {
-  let data = getFormFields(this);
+  let data = getFormFields(event.target);
   event.preventDefault();
   api.changePassword(data)
     .then(ui.success)
@@ -133,8 +119,8 @@ const onChangePassword = function (event) {
 };
 
 const onSignOut = function (event) {
-  event.preventDefault();
-  api.signOut()
+  let data = getFormFields(event.target);
+  api.signOut(data)
     .then(ui.success)
     .catch(ui.failure);
 };
@@ -151,30 +137,13 @@ const onSignOut = function (event) {
     $('.win').html('');
     };
 
-// const onGetStats = function (event) {
-//   event.preventDefault();
-//   api.signOut()
-//     .then(ui.success)
-//     .catch(ui.failure);
-// };
-
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
-  // $('#stats').on('submit', onGetStats);
   $('#reset').on('click', onResetBoard);
-  // $('.aa0').on('click', onTileClick);
-  // $('.ab1').on('click', onTileClick);
-  // $('.ac2').on('click', onTileClick);
-  // $('.ba3').on('click', onTileClick);
-  // $('.bb4').on('click', onTileClick);
-  // $('.bc5').on('click', onTileClick);
-  // $('.ca6').on('click', onTileClick);
-  // $('.cb7').on('click', onTileClick);
-  // $('.cc8').on('click', onTileClick);
-$('td').on('click', onTileClick);
+  $('td').on('click', onTileClick);
 
 };
 

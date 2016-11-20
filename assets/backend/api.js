@@ -16,7 +16,7 @@ const store = require('../scripts/store.js');
 
   const updateGame = function (data) {
     return $.ajax({
-      url: store.host + '/games/' + store.game.id,
+      url: store.host + '/games' + store.game.id,
       method: 'PATCH',
       data,
       headers: {
@@ -26,8 +26,19 @@ const store = require('../scripts/store.js');
     });
   };
 
+  const getAllGames = function (player_x) {
+    return $.ajax({
+      url: store.host + '/games',
+      method: 'GET',
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+      player_x,
+    });
+};
 
 module.exports = {
   createGame,
   updateGame,
+  getAllGames,
 };

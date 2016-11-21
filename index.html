@@ -9,59 +9,74 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class="containera">
+        <br>
+       <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Users</a>
 
-        <form id="sign-up">
-            <fieldset>
-              <legend>Sign Up!</legend>
-              <input type="text" name="credentials[email]" placeholder="email address">
-              <input type="password" name="credentials[password]" placeholder="password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-              <input type="submit" name="submit" value="Sign Up!">
-            </fieldset>
-          </form>
-        </div>
-        <div class="containerb">
-        <form id="sign-in">
-            <fieldset>
-              <legend>Sign In!</legend>
-              <input type="text" name="credentials[email]" placeholder="email address">
-              <input type="password" name="credentials[password]" placeholder="password">
-              <input type="submit" name="submit" value="Sign In!">
-            </fieldset>
-          </form>
-        </div>
-        <div class="containerc">
-        <form id="change-password">
-            <fieldset>
-              <legend>Change Password!</legend>
-              <input type="password" name="passwords[old]" placeholder="Old Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <input type="submit" name="submit" value="Change Password!">
-            </fieldset>
-          </form>
-        </div>
-        <div class="containerd">
-        <form id="sign-out">
-            <fieldset>
-              <legend>Sign Out!</legend>
-              <input type="text" name="credentials[email]" placeholder="email address">
-              <input type="submit" name="submit" value="Sign Out!">
-            </fieldset>
-          </form>
-        </div>
-        <div class="containere">
-        <form id="user-data">
-            <fieldset>
-              <legend>Stats!</legend>
-              <input type="text" name="credentials[email]" placeholder="email address">
-              <input type="submit" name="submit" value="Get Stats!">
-            </fieldset>
-          </form>
-        </div>
-        <div class="subcont"><br>
-        <h1>Let's play TIC-TAC-TOE!</h1>
+       <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+               <h4 class="modal-title">User Options</h4>
+             </div>
 
+             <div class="modal-body">
+               <div class="containera">
+
+               <form id="sign-up">
+                   <fieldset>
+                     <legend>Sign Up!</legend>
+                     <input type="text" name="credentials[email]" placeholder="email address">
+                     <input type="password" name="credentials[password]" placeholder="password">
+                     <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                     <input type="submit" name="submit" value="Sign Up!">
+                   </fieldset>
+                 </form>
+               </div>
+               <div class="containerb">
+               <form id="sign-in">
+                   <fieldset>
+                     <legend>Sign In!</legend>
+                     <input type="text" name="credentials[email]" placeholder="email address">
+                     <input type="password" name="credentials[password]" placeholder="password">
+                     <input type="submit" name="submit" value="Sign In!">
+                   </fieldset>
+                 </form>
+               </div>
+               <div class="containerc">
+               <form id="change-password">
+                   <fieldset>
+                     <legend>Change Password!</legend>
+                     <input type="password" name="passwords[old]" placeholder="Old Password">
+                     <input type="password" name="passwords[new]" placeholder="New Password">
+                     <input type="submit" name="submit" value="Change Password!">
+                   </fieldset>
+                 </form>
+               </div>
+               <div class="containerd">
+               <form id="sign-out">
+                   <fieldset>
+                     <legend>Sign Out!</legend>
+                     <input type="text" name="credentials[email]" placeholder="email address">
+                     <input type="submit" name="submit" value="Sign Out!">
+                   </fieldset>
+                 </form>
+               </div>
+
+</div>
+             <div class="modal-footer">
+               <div class="statsbox">
+
+    <button type="button" id='stats' class="btn btn-stats" value="Get Games">Stats</button>
+    </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+<<<<<<< HEAD
 
       </div>
         <div class="subcontb">
@@ -69,9 +84,20 @@
         People bet their life savings!  Their children's college funds!  Fingers! This is
           Tic-Tac-Toe bitches!
         </p>
+=======
+>>>>>>> api
 
+
+        <div class="subcont">
+      Log in to keep track, or just play!<br>People bet their life savings!  Their children's
+      college funds!  Fingers! This is Tic-Tac-Toe!
         </div>
-    <table>
+        <div class='player'>
+          <div class='player1'>PLAYER 1 is X!</div><br>
+          <div class='win'></div>
+          <div class='player2'>PLAYER 2 is O!</div>
+        </div>
+    <table id="board">
       <tr class="rowOne">
         <td class="aa0"></td>
         <td class="ab1"></td>
@@ -89,8 +115,8 @@
       </tr>
     </table>
     <br>
-    <button type="button" class="btn btn-primary" id="reset">Reset</button>
-
+    <button type="button" class="btn btn-primary" id="reset">New Game</button>
+    <br>
     <div class="footer">
     <h1>Created by: Ryan Roderick @ GA</h1>
     </div>

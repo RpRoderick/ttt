@@ -1,100 +1,101 @@
 'use strict';
 
 const getFormFields = require(`../../../lib/get-form-fields`);
-
 const api = require('./api');
 const ui = require('./ui');
 const world = require('../global.js');
 
-//this is what I was doing at first, it wasn't working, so I started my javascript over
-//$('td').one('click', /*toggle*/ (function () {
-  //if (player_x)
-  //   $(this).append('X');
-    //  if (player_o) {
-      //$(this).append('O');
-    //})
-    //else {
-      // $(this).append('player not assigned');
-     //}
-     //onUpdateGame(); //(this goes under click event to Update the game in API)
-//});
-//);
-// const toggle = function (a, b) {
-//     let togg = false;
-//     return function () {
-//         return (togg = !togg) ? a() : b();
-//     };
-// };
 
-//CAN I JUST USE .SWITCH UNDER APPEND INSTEAD OF TOGGLING?
+
 const winCheck = function() {
   let board = (world.ttt.board);
-  let gameOver = (world.ttt.gameOver);
   if (board[0] && (board[0] === board[1]) && (board[1] === board[2])) {
-    console.log('win');  //if these 3 values match=win.
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;   //if win, go to end game function
-    //if they don't match, continue playing
+    console.log('win');
+    $('.win').text(board[0] + ' Wins!');
+   world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[3] && (board[3] === board[4]) && (board[4] === board[5])){
     console.log('win');
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;
+    $('.win').text(board[3] + ' Wins!');
+   world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[6] && (board[6] === board[7]) && (board[7] === board[8])){
     console.log('win');
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;
+    $('.win').text(board[7] + ' Wins!');
+   world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[0] && (board[0] === board[3]) && (board[3] === board[6])){
     console.log('win');
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;
+    $('.win').text(board[0] + ' Wins!');
+   world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[1] && (board[1] === board[4]) && (board[4] === board[7])){
     console.log('win');
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;
+    $('.win').text(board[1] + ' Wins!');
+   world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[2] && (board[2] === board[5]) && (board[5] === board[8])){
     console.log('win');
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;
+    $('.win').text(board[2] + ' Wins!');
+   world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[0] && (board[0] === board[4]) && (board[4] === board[8])){
     console.log('win');
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;
+    $('.win').text(board[0] + ' Wins!');
+   world.ttt.gameOver = true;
+   return true;
+
   }
   if (board[2] && (board[2] === board[4]) && (board[4] === board[6])){
     console.log('win');
-    $('.win-message').text(board[0] + ' wins!');
-    gameOver = true;
+    $('.win').text(board[2] + ' Wins!');
+   world.ttt.gameOver = true;
+  return true;
   }
 };
 
 const onTileClick = function () {
-  let tile = $(this).attr('class');
-  let i = +(tile.replace(/\D/g, ''));
-   if (world.ttt.player === 'x') {
-     $('.'+tile).append('X');
-     world.ttt.player = 'o';
-     world.ttt.board[i] = 'x';
-  } else if (world.ttt.player === 'o') {
-     $('.'+tile).append('O');
-     world.ttt.player = 'x'; //swicthing player
-     world.ttt.board[i] = 'o';
+  if(world.ttt.gameOver){
+    return;
   }
-      winCheck();
-    if (world.ttt.gameOver) {
-      $('table').css('pointer-events', 'none');  //use this for turning click back on
-      //for reset game
- console.log('you win');
-    }
-};
+  let tile = $(this).attr('class');
+  let i = +(tile.replace(/\D/g, '')); //chrome doesn't like this line, not sure why
+    world.ttt.index = i;
+    console.log('index: ' + i);
+    if (world.ttt.player === 'X') {
+     $('.'+tile).append('X');
+     $('.'+tile).css('pointer-events', 'none');
+     world.ttt.player = 'O';
+     world.ttt.board[i] = 'X';
+     world.ttt.turnCount++;
+  } else if (world.ttt.player === 'O') {
+     $('.'+tile).append('O');
+     $('.'+tile).css('pointer-events', 'none');
+     world.ttt.player = 'X';
+     world.ttt.board[i] = 'O';
+     world.ttt.turnCount++;
+   }
+
+   winCheck();
+   if ((world.ttt.turnCount === 9) && (!winCheck())) {
+     $('.win').text('TIE!');
+ }
+  };
 
 const onSignUp = function (event) {
-  let data = getFormFields(this);
+  let data = getFormFields(event.target);
   event.preventDefault();
   api.signUp(data)
     .then(ui.signInSuccess)
@@ -102,7 +103,7 @@ const onSignUp = function (event) {
 };
 
 const onSignIn = function (event) {
-  let data = getFormFields(this);
+  let data = getFormFields(event.target);
   event.preventDefault();
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -110,7 +111,7 @@ const onSignIn = function (event) {
 };
 
 const onChangePassword = function (event) {
-  let data = getFormFields(this);
+  let data = getFormFields(event.target);
   event.preventDefault();
   api.changePassword(data)
     .then(ui.success)
@@ -118,44 +119,33 @@ const onChangePassword = function (event) {
 };
 
 const onSignOut = function (event) {
-  event.preventDefault();
-  api.signOut()
+  let data = getFormFields(event.target);
+  api.signOut(data)
     .then(ui.success)
     .catch(ui.failure);
 };
 
-const onResetGame = function (event) {
-  event.preventDefault();
-  //if winGame kicks in, it will shut down button click on table, need to
-  //kick in reset of board (clear td of value)
-  //$('reset').css('pointer-events', 'auto');
-  // let tile = $(this).attr('class');
-  //
-  // $('.'+tile).append('');
-
-};
+  const onResetBoard = function () {
+//turn clicks off until sign in - how?
+    world.ttt.index = 0;
+    world.ttt.turnCount = 0;
+    world.ttt.gameOver = false;
+    world.ttt.board = [];
+    world.ttt.player = 'X';
+    $('td').css('pointer-events', 'auto');
+    $('td').html('');
+    $('.win').html('');
+    };
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
-  $('#reset').on('submit', onResetGame);
-
-  $('.aa0').one('click', onTileClick);
-  $('.ab1').one('click', onTileClick);
-  $('.ac2').one('click', onTileClick);
-  $('.ba3').one('click', onTileClick);
-  $('.bb4').one('click', onTileClick);
-  $('.bc5').one('click', onTileClick);
-  $('.ca6').one('click', onTileClick);
-  $('.cb7').one('click', onTileClick);
-  $('.cc8').one('click', onTileClick);
-  // $('reset').css('pointer-events', 'auto');  //use this for turning click back on
-
+  $('#reset').on('click', onResetBoard);
+  $('td').on('click', onTileClick);
 };
 
 module.exports = {
   addHandlers,
-
 };

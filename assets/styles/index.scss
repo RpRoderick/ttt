@@ -1,0 +1,265 @@
+<<<<<<< HEAD
+=======
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.p {
+  text-align: center;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.containera {
+  background: white;
+  border-radius: 5px;
+  height: 100px;
+  text-align: center;
+  width: auto;
+}
+
+.containerb {
+  background: white;
+  border-radius: 5px;
+  height: 100px;
+  text-align: center;
+  width: auto;
+}
+
+.containerc {
+  background: white;
+  border-radius: 5px;
+  height: 100px;
+  text-align: center;
+  width: auto;
+}
+
+.containerd {
+  background: white;
+  border-radius: 5px;
+  height: 100px;
+  text-align: center;
+  width: auto;
+}
+
+.containere {
+  background: white;
+  border-radius: 5px;
+  height: 100px;
+  text-align: center;
+  width: auto;
+}
+
+.subcont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 2px 2px 5px gray;
+  background: white;
+  border-radius: 5px;
+  font-size: 25px;
+  height: 100px;
+}
+
+.subcontb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: white;
+  border-radius: 5px;
+  font-size: 15px;
+  height: 80px;
+}
+
+table {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+td {
+  border: solid 3px #000;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-size: 50px;
+  height: 100px;
+  text-align: center;
+  width: 100px;
+}
+
+td:hover {
+  background: #ff6347;
+  cursor: pointer;
+}
+
+.footer {
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 20px;
+  width: auto;
+}
+
+.win {
+  background: white;
+  font-size: 40px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  text-shadow: 2px 2px 5px blue;
+  text-align: center;
+  width: 20%;
+}
+
+.player {
+  height: 100px;
+  margin: 0 auto;
+  background-color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player1 {
+  width: 33%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: white;
+  text-shadow: 2px 2px 5px maroon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playernone {
+  width: 33%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: white;
+  text-shadow: 2px 2px 5px darkred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player2 {
+  width: 33%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: white;
+  text-shadow: 2px 2px 5px darkblue;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.statsbox {
+  width: 33%;
+  height: 30px;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-fade {
+  opacity: 0;
+  &.in {opacity: .7;};
+};
+
+.btn-default {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btn-primary {
+  background: black;
+  text-shadow: 2px 2px 5px white;
+  height: 40px;
+  margin-left: 45%;
+  margin-right: 45%;
+  width: 10%;
+}
+
+.btn-stats {
+  background: cornflowerblue;
+  height: 40px;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  width: 40%;
+
+}
+
+.modal-title {
+  width: 50%;
+  height: 30px;
+margin-left: 5%;
+
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .player1 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  .player2 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .btn-primary {
+    background: black;
+    height: 40px;
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    height: 100px;
+    margin-top: 0;
+    width: auto;
+    align-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .subcont {
+    background: white;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .statsbox {
+    width: 55%;
+    height: 30px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+>>>>>>> api

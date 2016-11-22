@@ -7,7 +7,7 @@ const success = (data) => {
   console.log(data);
 };
 
-const signInSuccess = data => {
+const signInSuccess = (data) => {
   store.user = data.user;
   success(data);
   $("#sign-in").click(function(){

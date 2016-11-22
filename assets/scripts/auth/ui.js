@@ -18,7 +18,11 @@ const signInSuccess = data => {
 const failure = (error) => {
   $('#messages').text("Failure");
   console.error(error);
+  $("#sign-out").click(function(){
+     $("#reset").css('display', 'none');
+  });
 };
+
 
 module.exports = {
   failure,

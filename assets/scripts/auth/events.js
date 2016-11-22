@@ -10,56 +10,56 @@ const world = require('../global.js');
 const winCheck = function() {
   let board = (world.ttt.board);
   if (board[0] && (board[0] === board[1]) && (board[1] === board[2])) {
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
    return true;
 
   }
   if (board[3] && (board[3] === board[4]) && (board[4] === board[5])){
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[3] + ' Wins!');
    world.ttt.gameOver = true;
    return true;
 
   }
   if (board[6] && (board[6] === board[7]) && (board[7] === board[8])){
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[7] + ' Wins!');
    world.ttt.gameOver = true;
    return true;
 
   }
   if (board[0] && (board[0] === board[3]) && (board[3] === board[6])){
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
    return true;
 
   }
   if (board[1] && (board[1] === board[4]) && (board[4] === board[7])){
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[1] + ' Wins!');
    world.ttt.gameOver = true;
    return true;
 
   }
   if (board[2] && (board[2] === board[5]) && (board[5] === board[8])){
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
    return true;
 
   }
   if (board[0] && (board[0] === board[4]) && (board[4] === board[8])){
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
    return true;
 
   }
   if (board[2] && (board[2] === board[4]) && (board[4] === board[6])){
-    console.log('win');
+    // console.log('win');
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
   return true;
@@ -73,7 +73,7 @@ const onTileClick = function () {
   let tile = $(this).attr('class');
   let i = +(tile.replace(/\D/g, '')); //chrome doesn't like this line, not sure why
     world.ttt.index = i;
-    console.log('index: ' + i);
+    // console.log('index: ' + i);
     if (world.ttt.player === 'X') {
      $('.'+tile).append('X');
      $('.'+tile).css('pointer-events', 'none');

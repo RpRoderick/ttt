@@ -16,7 +16,7 @@ const getGamesSuccess = (data) => {
     // console.log("get game");
     $('.statsbox')
     .text("You've played " + data.games.length + ' games');
- };
+};
 
 module.exports = {
   failure,

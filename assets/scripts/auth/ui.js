@@ -15,6 +15,13 @@ const signInSuccess = data => {
    });
 };
 
+const signOutSuccess = (data) => {
+  success(data);
+  $("#sign-out").click(function(){
+     $("#reset").css('display', 'none');
+   });
+};
+
 const failure = (error) => {
   $('#messages').text("Failure");
   console.error(error);
@@ -24,4 +31,5 @@ module.exports = {
   failure,
   success,
   signInSuccess,
+  signOutSuccess,
 };

@@ -7,12 +7,23 @@ const success = (data) => {
   console.log(data);
 };
 
-const signInSuccess = data => {
+const signInSuccess = (data) => {
   store.user = data.user;
   success(data);
-  $("#sign-in").click(function(){
-     $("#reset").css('display', 'block');
-   });
+  $('#reset').show();
+  $('#sign-out').show();
+  $('#stats').show();
+  $('#change-password').show();
+
+};
+
+const signOutSuccess = (data) => {
+  success(data);
+  $('#reset').hide();
+  $('#stats').hide();
+  $('#change-password').hide();
+  $('#sign-out').hide();
+  $('.statsbox').hide();
 };
 
 const failure = (error) => {
@@ -28,4 +39,5 @@ module.exports = {
   failure,
   success,
   signInSuccess,
+  signOutSuccess,
 };

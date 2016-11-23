@@ -12,8 +12,9 @@ const failure = (error) => {
 
 const getGamesSuccess = (data) => {
     store.game = data.game;
-    // console.log(data);
-    // console.log("get game");
+    $('td').css('pointer-events', 'none');
+    $('.win').text(' ');
+    $('td').text(' ');
     $('.statsbox')
     .text("You've played " + data.games.length + ' games');
 };

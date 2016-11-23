@@ -9,7 +9,6 @@ const world = require('../scripts/global.js');
 const onCreateGame = function (event) {
   event.preventDefault();
   api.createGame()
-    // .then(ui.success)
     .then(ui.success)
     .catch(ui.failure);
 };
@@ -30,8 +29,11 @@ const onUpdateGame = function () {
     .catch(ui.failure);
 };
 
+
 const onGetAllGames = function (event) {
   event.preventDefault();
+  $('.statsbox').on('click').text('TIC TAC TOE!');
+
   api.getAllGames()
     .then(ui.getGamesSuccess)
     .catch(ui.failure);

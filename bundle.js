@@ -359,8 +359,7 @@ webpackJsonp([0],[
 	  $('#signInBox').text('You Are NOT Signed In! Try Again.');
 	};
 
-	var signOutSuccess = function signOutSuccess(data) {
-	  success(data);
+	var signOutSuccess = function signOutSuccess() {
 	  $('#reset').hide();
 	  $('#stats').hide();
 	  $('#change-password').hide();

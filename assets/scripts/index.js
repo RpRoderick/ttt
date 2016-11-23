@@ -14,5 +14,4 @@ $(() => {
   $('#stats').hide();
   $('#sign-out').hide();
   $('#change-password').hide();
-  $('.statsbox').show();
 });

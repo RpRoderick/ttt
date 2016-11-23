@@ -24,7 +24,7 @@ const signOutSuccess = (data) => {
   $('#stats').hide();
   $('#change-password').hide();
   $('#sign-out').hide();
-  $('.statsbox').hide();
+  $('.statsbox').show();
 };
 
 const failure = (error) => {

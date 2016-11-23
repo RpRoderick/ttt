@@ -287,16 +287,6 @@ webpackJsonp([0],[
 	  });
 	};
 
-	// const getStats = (data) =>
-	//    $.ajax({
-	//     url: store.host + '/games/' + store.game,
-	//     method: 'GET',
-	//     data,
-	//     headers: {
-	//       Authorization: 'Token token=' + store.user.token,
-	//     },
-	//   });
-
 	module.exports = {
 	  signUp: signUp,
 	  signIn: signIn,
@@ -432,9 +422,7 @@ webpackJsonp([0],[
 
 	var onCreateGame = function onCreateGame(event) {
 	  event.preventDefault();
-	  api.createGame()
-	  // .then(ui.success)
-	  .then(ui.success).catch(ui.failure);
+	  api.createGame().then(ui.success).catch(ui.failure);
 	};
 
 	var onUpdateGame = function onUpdateGame() {
@@ -453,6 +441,8 @@ webpackJsonp([0],[
 
 	var onGetAllGames = function onGetAllGames(event) {
 	  event.preventDefault();
+	  $('.statsbox').on('click').text('TIC TAC TOE!');
+
 	  api.getAllGames().then(ui.getGamesSuccess).catch(ui.failure);
 	};
 
@@ -535,8 +525,9 @@ webpackJsonp([0],[
 
 	var getGamesSuccess = function getGamesSuccess(data) {
 	    store.game = data.game;
-	    // console.log(data);
-	    // console.log("get game");
+	    $('td').css('pointer-events', 'none');
+	    $('.win').text(' ');
+	    $('td').text(' ');
 	    $('.statsbox').text("You've played " + data.games.length + ' games');
 	};
 

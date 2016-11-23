@@ -60,41 +60,49 @@ webpackJsonp([0],[
 	  if (board[0] && board[0] === board[1] && board[1] === board[2]) {
 	    $('.win').text(board[0] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	  if (board[3] && board[3] === board[4] && board[4] === board[5]) {
 	    $('.win').text(board[3] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	  if (board[6] && board[6] === board[7] && board[7] === board[8]) {
 	    $('.win').text(board[7] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	  if (board[0] && board[0] === board[3] && board[3] === board[6]) {
 	    $('.win').text(board[0] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	  if (board[1] && board[1] === board[4] && board[4] === board[7]) {
 	    $('.win').text(board[1] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	  if (board[2] && board[2] === board[5] && board[5] === board[8]) {
 	    $('.win').text(board[2] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	  if (board[0] && board[0] === board[4] && board[4] === board[8]) {
 	    $('.win').text(board[0] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	  if (board[2] && board[2] === board[4] && board[4] === board[6]) {
 	    $('.win').text(board[2] + ' Wins!');
 	    world.ttt.gameOver = true;
+	    $('td').css('pointer-events', 'none');
 	    return true;
 	  }
 	};
@@ -425,7 +433,8 @@ webpackJsonp([0],[
 	  api.createGame().then(ui.success).catch(ui.failure);
 	};
 
-	var onUpdateGame = function onUpdateGame() {
+	var onUpdateGame = function onUpdateGame(event) {
+	  event.preventDefault();
 	  var data = {
 	    "game": {
 	      "cell": {

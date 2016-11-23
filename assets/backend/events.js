@@ -13,14 +13,15 @@ const onCreateGame = function (event) {
     .catch(ui.failure);
 };
 
-const onUpdateGame = function () {
+const onUpdateGame = function (event) {
+  event.preventDefault();
   let data = {
     "game": {
       "cell": {
         "index": world.ttt.index,
         "value": world.ttt.player === "X"?"o":"x",
       },
-      "over": world.ttt.gameOver,
+      "over": world.ttt.gameOver
     },
   };
 

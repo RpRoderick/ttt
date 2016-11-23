@@ -12,48 +12,55 @@ const winCheck = function() {
   if (board[0] && (board[0] === board[1]) && (board[1] === board[2])) {
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
    return true;
 
   }
   if (board[3] && (board[3] === board[4]) && (board[4] === board[5])){
     $('.win').text(board[3] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
    return true;
 
   }
   if (board[6] && (board[6] === board[7]) && (board[7] === board[8])){
     $('.win').text(board[7] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
    return true;
 
   }
   if (board[0] && (board[0] === board[3]) && (board[3] === board[6])){
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
    return true;
 
   }
   if (board[1] && (board[1] === board[4]) && (board[4] === board[7])){
     $('.win').text(board[1] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
    return true;
 
   }
   if (board[2] && (board[2] === board[5]) && (board[5] === board[8])){
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
    return true;
 
   }
   if (board[0] && (board[0] === board[4]) && (board[4] === board[8])){
     $('.win').text(board[0] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
    return true;
-
   }
   if (board[2] && (board[2] === board[4]) && (board[4] === board[6])){
     $('.win').text(board[2] + ' Wins!');
    world.ttt.gameOver = true;
+   $('td').css('pointer-events', 'none');
   return true;
   }
 };
@@ -80,9 +87,9 @@ const onTileClick = function () {
    }
 
    winCheck();
-   if ((world.ttt.turnCount === 9) && (!winCheck())) {
+    if ((world.ttt.turnCount === 9) && (!winCheck())) {
      $('.win').text('TIE!');
- }
+}
   };
 
 const onSignUp = function (event) {

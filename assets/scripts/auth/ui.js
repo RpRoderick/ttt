@@ -36,8 +36,7 @@ const signInFailure = (data) => {
   $('#signInBox').text('You Are NOT Signed In! Try Again.');
 };
 
-const signOutSuccess = (data) => {
-  success(data);
+const signOutSuccess = () => {
   $('#reset').hide();
   $('#stats').hide();
   $('#change-password').hide();

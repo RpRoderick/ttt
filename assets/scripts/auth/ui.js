@@ -14,7 +14,6 @@ const signInSuccess = (data) => {
   $('#sign-out').show();
   $('#stats').show();
   $('#change-password').show();
-  $('.statsbox').show();
 
 };
 
@@ -24,7 +23,6 @@ const signOutSuccess = (data) => {
   $('#stats').hide();
   $('#change-password').hide();
   $('#sign-out').hide();
-  $('.statsbox').hide();
 };
 
 const failure = (error) => {

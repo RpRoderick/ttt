@@ -89,8 +89,8 @@ const onSignUp = function (event) {
   let data = getFormFields(event.target);
   event.preventDefault();
   api.signUp(data)
-    .then(ui.signInSuccess)
-    .catch(ui.failure);
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure);
 };
 
 const onSignIn = function (event) {
@@ -98,15 +98,15 @@ const onSignIn = function (event) {
   event.preventDefault();
   api.signIn(data)
     .then(ui.signInSuccess)
-    .catch(ui.failure);
+    .catch(ui.signInFailure);
 };
 
 const onChangePassword = function (event) {
   let data = getFormFields(event.target);
   event.preventDefault();
   api.changePassword(data)
-    .then(ui.success)
-    .catch(ui.failure);
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure);
 };
 
 const onSignOut = function (event) {

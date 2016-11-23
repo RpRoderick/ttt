@@ -25,6 +25,33 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: auto;
 }
 
+#signInBox {
+  background: white;
+  border-radius: 5px;
+  height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: auto;
+}
+
+#changePasswordBox {
+  background: white;
+  border-radius: 5px;
+  height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: auto;
+}
+
+#signUpBox {
+  background: white;
+  border-radius: 5px;
+  height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: auto;
+}
+
 .containerc {
   background: white;
   border-radius: 5px;
@@ -256,6 +283,18 @@ margin-left: 5%;
   .statsbox {
     width: 55%;
     height: 30px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .containera {
+    width: auto;
+    height: auto;
     margin: 0 auto;
     background-color: white;
     display: flex;

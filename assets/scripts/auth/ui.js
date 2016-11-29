@@ -14,6 +14,8 @@ const signInSuccess = (data) => {
   $('#sign-out').show();
   $('#stats').show();
   $('#change-password').show();
+  $('#messages').text("Success");
+
 
 };
 

@@ -36,20 +36,9 @@ const changePassword = (data) =>
       },
     });
 
-    // const getStats = (data) =>
-    //    $.ajax({
-    //     url: store.host + '/games/' + store.game,
-    //     method: 'GET',
-    //     data,
-    //     headers: {
-    //       Authorization: 'Token token=' + store.user.token,
-    //     },
-    //   });
-
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  // getStats,
 };

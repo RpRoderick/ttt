@@ -1,17 +1,122 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title> Tic Tac Toe </title>
+<html lang="en">
 
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
 
-      <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+
+    <title>TheGameAboutNothing</title>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" data-toggle="modal" href="#myModal1">Sign Up or Sign In</a>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Upload a Photo</a>
+                    </li>
+                    <li>
+                        <a href="#">Sign Out</a>
+                    </li>
+                    <li>
+                        <a href="#">Placeholder</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<br>
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">The Game About Nothing
+                    <small>placeholder</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3>The Game About Nothing</h3>
+                <p>We see this show wherever we go!  And we can prove it.
+More writing here.  Instructions on how to play, etc.</p>
+                <h3>How To Play</h3>
+                <ul>
+                    <li>1: Sign Up!</li>
+                    <li>2: Make a Guess on a Clue or Upload Your Own</li>
+                    <li>Placeholder</li>
+                    <li>Placeholder</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Recent Clues</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
+                </a>
+            </div>
+
+        </div>
+        <!-- /.row -->
         <br>
-       <a data-toggle="modal" href="#myModal1" class="btn btn-primary btn-lg">Users</a>
-
        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
          <div class="modal-dialog">
            <div class="modal-content">
@@ -22,17 +127,17 @@
 
              <div class="modal-body">
                <div class="containera">
+                 <form id="sign-up">
+                     <fieldset>
+                       <input type="text" name="credentials[email]" placeholder="email address">
+                       <input type="password" name="credentials[password]" placeholder="password">
+                       <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+                       <input type="submit" name="submit" value="Sign Up!">
+                     </fieldset>
+                   </form>
+                 </div>
+                 </div>
 
-               <form id="sign-up">
-                   <fieldset>
-                     <legend>Sign Up!</legend>
-                     <input type="text" name="credentials[email]" placeholder="email address">
-                     <input type="password" name="credentials[password]" placeholder="password">
-                     <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
-                     <input type="submit" name="submit" value="Sign Up!">
-                   </fieldset>
-                 </form>
-               </div>
                <div class="containerb">
                <form id="sign-in">
                    <fieldset>
@@ -61,50 +166,32 @@
                    </fieldset>
                  </form>
                </div>
-
-</div>
+<div id="messages"></div>
+      </div>
              <div class="modal-footer">
-               <div>
-<p class="statsbox">
-</p>
-    <button type="button" id='stats' class="btn btn-stats" value="Get Games">Stats</button>
-    </div>
+
              </div>
            </div>
          </div>
        </div>
-        <div class="subcont">
-      Log in to play!<br>People bet their life savings!  Their children's
-      college funds!  Fingers! This is Tic-Tac-Toe!
-        </div>
-        <div class='player'>
-          <div class='player1'>PLAYER 1 is X!</div><br>
-          <div class='win'></div>
-          <div class='player2'>PLAYER 2 is O!</div>
-        </div>
-    <table id="board">
-      <tr class="rowOne">
-        <td class="aa0"></td>
-        <td class="ab1"></td>
-        <td class="ac2"></td>
-      </tr>
-      <tr class="rowTwo">
-        <td class="ba3"></td>
-        <td class="bb4"></td>
-        <td class="bc5"></td>
-      </tr>
-      <tr class="rowThree">
-        <td class="ca6"></td>
-        <td class="cb7"></td>
-        <td class="cc8"></td>
-      </tr>
-    </table>
-    <br>
-    <button type="button" class="btn btn-primary" id="reset">New Game</button>
-    <br>
-    <div class="footer">
-    <h1>Created by: Ryan Roderick @ GA</h1>
+      <br>
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; TheGameAboutNothing.com</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
     </div>
+    <!-- /.container -->
+
+
+
 
     </body>
 </html>

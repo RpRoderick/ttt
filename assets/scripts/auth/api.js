@@ -10,6 +10,13 @@ const signUp = (data) =>
     data,
   });
 
+  // const post = (data) =>
+  //   $.ajax({
+  //     url: store.host + '/photos/' + store.user.id,
+  //     method: 'POST',
+  //     data,
+  //   });
+
 const signIn = (data) =>
   $.ajax({
     url: store.host + '/sign-in',
@@ -41,4 +48,5 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
+  // post,
 };

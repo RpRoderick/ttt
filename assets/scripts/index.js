@@ -9,7 +9,7 @@ const backEndEvents = require('../backend/events.js');
 
 $(() => {
   authEvents.addHandlers();
-  backEndEvents.addBoardHandlers();
+  backEndEvents.addClueHandlers();
   $('#reset').hide();
   $('#stats').hide();
   $('#sign-out').hide();

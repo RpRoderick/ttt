@@ -32,16 +32,29 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Upload a Photo</a>
+                      <form id="postImage">
+                          <fieldset>
+                            <input type="text" name="credentials[email]" placeholder="email address">
+                            <input type="password" name="credentials[password]" placeholder="password">
+                            <input type="text" name="credentials[photo_id]" placeholder="photo_id">
+                            <input type="submit" name="submit" value="Post!">
+                          </fieldset>
+                        </form>
+<br>
                     </li>
                     <li>
-                        <a href="#">Sign Out</a>
-                    </li>
-                    <li>
-                        <a href="#">Placeholder</a>
+                      <form id="deleteImage">
+                          <fieldset>
+                            <input type="text" name="credentials[email]" placeholder="email address">
+                            <input type="password" name="credentials[password]" placeholder="password">
+                            <input type="text" name="credentials[photo_id]" placeholder="photo_id">
+                            <input type="submit" name="submit" value="Delete!">
+                          </fieldset>
+                        </form>
                     </li>
                 </ul>
             </div>
+<br>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -59,12 +72,12 @@
             </div>
         </div>
         <!-- /.row -->
-
+<br>
         <!-- Portfolio Item Row -->
         <div class="row">
 
             <div class="col-md-8">
-                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+                <img class="img-responsive" alt="" src="http://placehold.it/750x500">
             </div>
 
             <div class="col-md-4">
@@ -166,6 +179,27 @@ More writing here.  Instructions on how to play, etc.</p>
                    </fieldset>
                  </form>
                </div>
+
+
+               <div class="containerd">
+               <form id="sign-out">
+                   <fieldset>
+                     <legend>DELETE PHOTO</legend>
+                     <input type="submit" name="submit" value="DELETE!">
+                   </fieldset>
+                 </form>
+               </div>
+
+               <div class="containerd">
+               <form id="sign-out">
+                   <fieldset>
+                     <legend>DELETE COMMENT</legend>
+                     <input type="submit" name="submit" value="DELETE!">
+                   </fieldset>
+                 </form>
+               </div>
+
+
 <div id="messages"></div>
       </div>
              <div class="modal-footer">

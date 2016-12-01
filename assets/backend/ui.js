@@ -40,7 +40,7 @@ $('.col-md-8').html(template);
 
 const postImageSuccess = (data) => {
  console.log(data);
- store.users.id = data.user.id;
+ // store.users.id = data.user.id;
 
  renderItem(data);
 };

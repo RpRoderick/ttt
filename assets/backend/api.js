@@ -2,13 +2,14 @@
 
 const store = require('../scripts/store.js');
 
-  const postImage = function () {
+  const postImage = function (data) {
     return $.ajax({
-      url: store.host + '/images/' + store.user.id,
+      url: store.host + '/images/',
       method: 'POST',
       headers: {
         Authorization: 'Token token=' + store.user.token,
       },
+data
     });
   };
 

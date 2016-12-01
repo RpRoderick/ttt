@@ -31,9 +31,9 @@ const ui = require('./ui');
 // };
 
 const onPostImage = function (event) {
-  let data = getFormFields(event.target);
+  let postImage = getFormFields(event.target)
   event.preventDefault();
-  api.postImage(data)
+  api.postImage(postImage)
     .then(ui.postImageSuccess)
     .catch(ui.failure);
 };

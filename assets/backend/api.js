@@ -4,7 +4,7 @@ const store = require('../scripts/store.js');
 
   const postImage = function () {
     return $.ajax({
-      url: store.host + '/posts/' + store.user.id,
+      url: store.host + '/images/' + store.user.id,
       method: 'POST',
       headers: {
         Authorization: 'Token token=' + store.user.token,

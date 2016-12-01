@@ -8,11 +8,6 @@
   <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
 
-  <script type="text/javascript"
-          src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="http://www.your-domain.com/easy-comment/jquery.easy-comment.min.js"></script>
-
     <title>TheGameAboutNothing</title>
 
 </head>
@@ -36,35 +31,16 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                      <form id="postImage">
-                          <fieldset>
-                            <input type="text" name="credentials[email]" placeholder="email address">
-                            <input type="password" name="credentials[password]" placeholder="password">
-                            <input type="text" name="credentials[photo_id]" placeholder="photo_id">
-                            <input type="submit" name="submit" value="Post!">
-                          </fieldset>
-                        </form>
-<br>
-                    </li>
-                    <li>
-                      <form id="deleteImage">
-                          <fieldset>
-                            <input type="text" name="credentials[email]" placeholder="email address">
-                            <input type="password" name="credentials[password]" placeholder="password">
-                            <input type="text" name="credentials[photo_id]" placeholder="photo_id">
-                            <input type="submit" name="submit" value="Delete!">
-                          </fieldset>
-                        </form>
-                    </li>
+
                 </ul>
+              </div>
             </div>
 <br>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-<br>
+<br><br>
     <!-- Page Content -->
     <div class="container">
 
@@ -155,7 +131,6 @@ More writing here.  Instructions on how to play, etc.</p>
                      </fieldset>
                    </form>
                  </div>
-                 </div>
 
                <div class="containerb">
                <form id="sign-in">
@@ -187,27 +162,34 @@ More writing here.  Instructions on how to play, etc.</p>
                </div>
 
 
-               <div class="containerd">
-               <form id="sign-out">
+               <div class="containera">
+               <form id="postImage">
                    <fieldset>
-                     <legend>DELETE PHOTO</legend>
-                     <input type="submit" name="submit" value="DELETE!">
+                     <legend>Upload PHOTO</legend>
+                     <input type="text" name="credentials[email]" placeholder="Email">
+                     <input type="password" name="credentials[password]" placeholder="password">
+                     <input type="url" name="url" placeholder="Photo URL">
+                     <input type="submit" name="submit" value="Post!">
                    </fieldset>
                  </form>
                </div>
 
-               <div class="containerd">
-               <form id="sign-out">
-                   <fieldset>
-                     <legend>DELETE COMMENT</legend>
-                     <input type="submit" name="submit" value="DELETE!">
-                   </fieldset>
-                 </form>
-               </div>
+               <div class="containera">
+                 <form id="imageDelete">
+                     <fieldset>
+                       <legend>Delete PHOTO</legend>
+                       <input type="text" name="credentials[email]" placeholder="Email">
+                       <input type="password" name="credentials[password]" placeholder="password">
+                       <input type="url" name="url" placeholder="Photo URL">
+                       <input type="submit" name="submit" value="DELETE!">
+                     </fieldset>
+                   </form>
+                 </div>
 
 
 <div id="messages"></div>
-      </div>
+    </div>
+
              <div class="modal-footer">
 
              </div>

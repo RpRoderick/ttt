@@ -34,7 +34,7 @@ const onPostImage = function (event) {
   let data = getFormFields(event.target);
   event.preventDefault();
   api.postImage(data)
-    .then(ui.success)
+    .then(ui.postImageSuccess)
     .catch(ui.failure);
 };
 
@@ -50,8 +50,8 @@ const addClueHandlers = () => {
   // $('#board').css('pointer-events', 'none');
   // $('#reset').on('click', onCreateGame);
   // $('td').on('click', onUpdateGame);
-  $('#postImage').on('click', onPostImage);
-  $('#deleteImage').on('click', onDeleteImage);
+  $('#postImage').on('submit', onPostImage);
+  $('#deleteImage').on('submit', onDeleteImage);
 };
 
 

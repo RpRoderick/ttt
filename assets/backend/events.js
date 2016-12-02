@@ -20,7 +20,7 @@ const onDeleteImage = function (event) {
     .then(ui.deleteImageSuccess)
     .catch(ui.failure);
 };
-
+//
 const onUpdateImage = function (event) {
   event.preventDefault();
   let updateImage = getFormFields(event.target);
@@ -28,6 +28,20 @@ const onUpdateImage = function (event) {
     .then(ui.updateImageSuccess)
     .catch(ui.failure);
 };
+
+// const onUpdateImage = function (event) {
+//   event.preventDefault();
+//   let updateImage = {
+//     "image": {
+//       "url": {
+//         "url":
+//       },
+//     },
+//   };
+//   api.updateImage(updateImage)
+//     .then(ui.updateImageSuccess)
+//     .catch(ui.failure);
+// };
 
 const onViewImage = function (event) {
   event.preventDefault();

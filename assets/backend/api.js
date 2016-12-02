@@ -13,15 +13,16 @@ data
     });
   };
 
-  const deleteImage = function () {
+  const deleteImage = function (id) {
     return $.ajax({
-      url: store.host + '/posts/' + store.user.id,
+      url: store.host + '/images/' + id,
       method: 'DELETE',
       headers: {
         Authorization: 'Token token=' + store.user.token,
       },
     });
   };
+window.deleteImage = deleteImage;
 //   const updateGame = function (data) {
 //     return $.ajax({
 //       url: store.host + '/games/' + store.game.id,

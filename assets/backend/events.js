@@ -39,19 +39,16 @@ const onPostImage = function (event) {
 };
 
 const onDeleteImage = function (event) {
-  let data = getFormFields(event.target);
+  let deleteImage = getFormFields(event.target);
   event.preventDefault();
-  api.deleteImage(data)
-    .then(ui.success)
+  api.deleteImage(deleteImage.id)
+    .then(ui.deleteImageSuccess)
     .catch(ui.failure);
 };
 
 const addClueHandlers = () => {
-  // $('#board').css('pointer-events', 'none');
-  // $('#reset').on('click', onCreateGame);
-  // $('td').on('click', onUpdateGame);
   $('#postImage').on('submit', onPostImage);
-  $('#deleteImage').on('submit', onDeleteImage);
+  $('#imageDelete').on('submit', onDeleteImage);
 };
 
 

@@ -23,33 +23,32 @@ data
     });
   };
 window.deleteImage = deleteImage;
-//   const updateGame = function (data) {
-//     return $.ajax({
-//       url: store.host + '/games/' + store.game.id,
-//       method: 'PATCH',
-//       data,
-//       headers: {
-//         Authorization: 'Token token=' + store.user.token,
-//       },
-//         game: {}
-//     });
-//   };
-//
-//   const getAllGames = function (player_x) {
-//     return $.ajax({
-//       url: store.host + '/games',
-//       method: 'GET',
-//       headers: {
-//         Authorization: 'Token token=' + store.user.token,
-//       },
-//       player_x,
-//     });
-// };
+
+const updateImage = function (data) {
+  return $.ajax({
+    url: store.host + '/images/' + data.image.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data
+  });
+};
+
+const viewImage = function (data) {
+  return $.ajax({
+    url: store.host + '/images/' + data.image.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data
+  });
+};
 
 module.exports = {
   postImage,
   deleteImage,
-  // createGame,
-  // updateGame,
-  // getAllGames,
+  updateImage,
+  viewImage,
 };

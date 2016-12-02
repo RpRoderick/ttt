@@ -27,18 +27,15 @@ $('.col-md-8').html(template);
 const postImageSuccess = (data) => {
  console.log(data);
  // store.users.id = data.user.id;
-
  renderItem(data);
 };
-// const getGamesSuccess = (data) => {
-//     store.game = data.game;
-//     // console.log(data);
-//     // console.log("get game");
-//     $('.statsbox')
-//     .text("You've played " + data.games.length + ' games');
-// };
+
 
 const deleteImageSuccess = (data) => {
+ console.log(data);
+};
+
+const updateImageSuccess = (data) => {
  console.log(data);
 };
 
@@ -47,4 +44,5 @@ module.exports = {
   success,
   postImageSuccess,
   deleteImageSuccess,
+  updateImageSuccess,
 };

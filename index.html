@@ -173,7 +173,28 @@ More writing here.  Instructions on how to play, etc.</p>
                </div>
 
                <div class="containera">
-                 <form id="imageDelete">
+               <form id="updateImage">
+                   <fieldset>
+                     <legend>Update PHOTO</legend>
+                     <input type="url" name="image[url]" placeholder="Updated Photo URL">
+                     <input type="text" name="image[id]" placeholder="ID">
+                     <input type="submit" name="submit" value="Update URL!">
+                   </fieldset>
+                 </form>
+               </div>
+
+               <div class="containera">
+               <form id="viewImage">
+                   <fieldset>
+                     <legend>View PHOTO</legend>
+                     <input type="text" name="image[id]" placeholder="ID">
+                     <input type="submit" name="submit" value="View Photo!">
+                   </fieldset>
+                 </form>
+               </div>
+
+               <div class="containera">
+                 <form id="deleteImage">
                      <fieldset>
                        <legend>Delete PHOTO</legend>
                        <input type="text" name="id" placeholder="ID">

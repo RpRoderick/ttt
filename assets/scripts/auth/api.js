@@ -1,6 +1,5 @@
 'use strict';
 
-// const config = require('../config.js');
 const store = require('../store.js');
 
 const signUp = (data) =>
@@ -9,13 +8,6 @@ const signUp = (data) =>
     method: 'POST',
     data,
   });
-
-  // const post = (data) =>
-  //   $.ajax({
-  //     url: store.host + '/photos/' + store.user.id,
-  //     method: 'POST',
-  //     data,
-  //   });
 
 const signIn = (data) =>
   $.ajax({
@@ -48,5 +40,4 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
-  // post,
 };

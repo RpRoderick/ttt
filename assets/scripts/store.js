@@ -1,7 +1,8 @@
 'use strict';
 
 const store = {
-  host: 'http://localhost:4741'
+  // host: 'http://localhost:4741'
+host: 'https://obscure-earth-97091.herokuapp.com/'
   // host: 'https://aqueous-atoll-85096.herokuapp.com'
 };
 
